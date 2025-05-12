@@ -25,8 +25,6 @@ public class NirvanaCommon {
         NirvanaPaintings.register();
         NirvanaParticles.register();
         NirvanaBanners.register();
-
-        Services.PLATFORM.getRegistrate().addRegisterCallback(Registries.POTION, NirvanaBrewing::register);
     }
 
 }

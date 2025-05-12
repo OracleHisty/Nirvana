@@ -6,10 +6,8 @@ import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import galena.nirvana.NirvanaCommon;
 import galena.nirvana.NirvanaConstants;
 import galena.nirvana.compat.DyeColors;
-import galena.nirvana.index.NirvanaBanners;
-import galena.nirvana.index.NirvanaBlocks;
-import galena.nirvana.index.NirvanaItems;
-import galena.nirvana.index.NirvanaTags;
+import galena.nirvana.index.*;
+import galena.nirvana.platform.Services;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -44,6 +42,7 @@ public class FabricEntrypoint implements ModInitializer {
     @Override
     public void onInitialize() {
         NirvanaCommon.init();
+        NirvanaBrewing.register();
         REGISTRATE.register();
 
         LootTableEvents.MODIFY.register((resources, manager, id, table, source) -> {
